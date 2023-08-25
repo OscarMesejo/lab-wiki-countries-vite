@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"; 
+import { Link } from "react-router-dom";
 
 function HomePage() {
 
@@ -20,11 +21,13 @@ function HomePage() {
             <div className="container" style={{ maxHeight: "90vh", overflow: "scroll" }}>
                 <h1 style={{ fontSize: "24px" }}>WikiCountries: Your Guide to the World</h1>
 
-                <div className="list-group">
+                <div className="listGroup">
                     {countries.map((country)=>{
-                        return <div key= {country._id} >
-                        <h3>{country.name.official}</h3>
+                        return (
+                        <div key= {country._id} >
+                        <Link to={`/${country.alpha3Code}`} > {country.name.official}</Link>
                         </div>
+                        )
                     })}
                 </div>
             </div>
