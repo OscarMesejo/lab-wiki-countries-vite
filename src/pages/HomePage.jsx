@@ -25,6 +25,7 @@ function HomePage() {
                     {countries.map((country)=>{
                         return (
                         <div key= {country._id} >
+                            <img style= {{height: "10px"}}src={`https://flagpedia.net/data/flags/icon/72x54/${country.alpha2Code.toLowerCase()}.png`} alt="" />
                         <Link to={`/${country.alpha3Code}`} > {country.name.official}</Link>
                         </div>
                         )
